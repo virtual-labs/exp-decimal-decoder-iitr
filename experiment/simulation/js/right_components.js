@@ -27,12 +27,22 @@ btn_close.addEventListener('click', () => {
     Second_Data.classList.remove('visible')
 });
 
+const check_button = document.getElementById('check');
 
+const bread_but=document.getElementById("breadbutton");
+const supply_but=document.getElementById("supplybutton");
+const switch_but=document.getElementById("switchbutton");
+const led_but=document.getElementById("ledbutton");
+const ic_but=document.getElementById("icbutton");
+const r_but=document.getElementById("resistancebutton");
 
 // Components hide show code here
 function breadboard() {
     var x = document.getElementById("board");
     x.style.visibility = "visible";
+
+    bread_but.disabled=true;
+    bread_but.style.cursor="not-allowed";
 
     var instance = new BoardController();
 
@@ -259,11 +269,16 @@ function breadboard() {
         instance.addEndPoint(4.5, 'board', 'row8', 'r199', [0, 0, 0, 1, 842.5, 282.5], 'blue');
         instance.addEndPoint(4.5, 'board', 'row8', 'r200', [0, 0, 0, 1, 856, 282.5], 'blue');
     }
+
+    disabledButton();
 }
 
 function inputs() {
     var x = document.getElementById("inputs");
     x.style.visibility = "visible";
+
+    switch_but.disabled=true;
+    switch_but.style.cursor="not-allowed";
 
     var inputs = new BoardController();
     inputs.setJsPlumbInstance(jsPlumb);
@@ -273,11 +288,16 @@ function inputs() {
     inputs.addEndPoint(4.5, 'inputs', 'input_B', 'input_B', [0, 0, 0, 0, 120, 90], 'red');
     inputs.addEndPoint(4.5, 'inputs', 'input_C', 'input_C', [0, 0, 0, 0, 200, 90], 'red');
     inputs.addEndPoint(4.5, 'inputs', 'input_D', 'input_D', [0, 0, 0, 0, 280, 90], 'red');
+
+    disabledButton();
 }
 
 function supply() {
     var x = document.getElementById("supply");
     x.style.visibility = "visible";
+
+    supply_but.disabled=true;
+    supply_but.style.cursor="not-allowed";
 
     var supply = new BoardController();
     supply.setJsPlumbInstance(jsPlumb);
@@ -285,11 +305,16 @@ function supply() {
 
     supply.addEndPoint(8, 'supply', 'VCC', 'VCC', [0, 0, -1, 0, 40, 45], 'blue','red');
     supply.addEndPoint(8, 'supply', 'GND', 'GND', [0, 0, 1, 0, 80, 45], 'red','black');
+
+    disabledButton();
 }
 
 function ic7442() {
     var x = document.getElementById("ic7442");
     x.style.visibility = "visible";
+
+    ic_but.disabled=true;
+    ic_but.style.cursor="not-allowed";
 
     var ic7442 = new BoardController();
     ic7442.setJsPlumbInstance(jsPlumb);
@@ -392,11 +417,16 @@ function ic7442() {
         ic7442.addEndPoint(4.5, 'ic7442', 'ic7442_GND', 'ic7442_GND05', [0, 0, 0, 1, 103.5, 152], 'red');
 
     }
+
+    disabledButton();
 }
 
 function led() {
    var a = document.getElementById("led0");
    a.style.visibility = "visible";
+
+    led_but.disabled=true;
+    led_but.style.cursor="not-allowed";
 
    var elms = document.querySelectorAll("[id='l0']");
         for(var i = 0; i < elms.length; i++) 
@@ -608,11 +638,16 @@ function led() {
     led9.addEndPoint(4.5, 'led9', 'led_A9', 'led_A904', [0, 0, 0, 0, 23.5, 140.5], 'red');
     led9.addEndPoint(4.5, 'led9', 'led_A9', 'led_A905', [0, 0, 0, 0, 23.5, 154], 'red');
 
+    disabledButton();
 }
 
 function resistance(){
     var a = document.getElementById("r0");
     a.style.visibility = "visible";
+
+    r_but.disabled=true;
+    r_but.style.cursor="not-allowed";
+
     var elms = document.querySelectorAll("[id='re0']");
     for(var i = 0; i < elms.length; i++) 
       elms[i].style.visibility="visible";
@@ -804,4 +839,25 @@ function resistance(){
     r9.addEndPoint(4.2, 'r9', 'r9_B', 'r9_B02', [0, 0, 0, 1, 8, 125], 'red');
     r9.addEndPoint(4.2, 'r9', 'r9_B', 'r9_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     r9.addEndPoint(4.2, 'r9', 'r9_B', 'r9_B04', [0, 0, 0, 1, 8, 152], 'red');
+
+    disabledButton();
+}
+
+
+function disabledButton()
+{
+
+    
+    
+  if(window.getComputedStyle(document.getElementById('board')).visibility === "visible" && window.getComputedStyle(document.getElementById('led0')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('ic7442')).visibility === "visible" &&
+   window.getComputedStyle(document.getElementById('r0')).visibility === "visible"  && 
+   window.getComputedStyle(document.getElementById('supply')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('input_a')).visibility === "visible")
+  {
+  check_button.disabled=false;
+  Second.disabled=true;
+  Second.style.cursor="not-allowed";  
+     
+  }
 }
