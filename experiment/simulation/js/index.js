@@ -116,6 +116,14 @@ function checkCircuit() {
     }
     console.log("exe")
 
+    var edges= (g.numberofedges);
+   console.log('edges:'+edges)
+   if(edges == 0)
+   {
+       alert("No connections present.");   
+       return;
+   }
+   
     if (g.isConnected('ic7442_VCC', 'VCC') && g.isConnected('ic7442_GND', 'GND') &&
         g.isConnected('ic7442_A', 'input_A') && g.isConnected('ic7442_B', 'input_B') && g.isConnected('ic7442_C', 'input_C') && g.isConnected('ic7442_D', 'input_D') &&
         ((g.isConnected('led_A0', 'r0_A') && g.isConnected('r0_B', 'VCC')) || (g.isConnected('led_A0', 'r0_B') && g.isConnected('r0_A', 'VCC'))) &&
@@ -131,7 +139,8 @@ function checkCircuit() {
         g.isConnected('ic7442_Y0', 'led_C0') && g.isConnected('ic7442_Y1', 'led_C1') && g.isConnected('ic7442_Y2', 'led_C2') && g.isConnected('ic7442_Y3', 'led_C3') && g.isConnected('ic7442_Y4', 'led_C4') && g.isConnected('ic7442_Y5', 'led_C5') && g.isConnected('ic7442_Y6', 'led_C6') && g.isConnected('ic7442_Y7', 'led_C7') && g.isConnected('ic7442_Y8', 'led_C8') && g.isConnected('ic7442_Y9', 'led_C9')
     ) {
         con = true;
-        alert("Right COnnections")
+        alert("Right COnnections");
+        document.getElementById('tab_reset').disabled=false;
         showOutput();
 
     } else {

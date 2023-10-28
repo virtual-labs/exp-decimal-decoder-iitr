@@ -144,7 +144,7 @@
             </div>
             <div class="bottom">
                 <div>
-                    <button id="check" onclick="checkCircuit()">Check Connection</button>
+                    <button id="check" onclick="checkCircuit()" disabled>Check Connection</button>
                     <button id="reset" onclick="reload()">Reset</button>
                 </div>
             </div>
@@ -155,39 +155,40 @@
                 <div class="panel">
                     <button class="close-btn" id="close-btn"><span>&#10005</span></button>
                     <ol type="1" style="padding-left: 20px;text-align: left;">
+                        <li>Click on the components button and place all the component.</li>    
                         <li>Make connections as per the circuit diagram and pin diagram of IC.</li>
                         <figure>
                             <img src="./images/image002.jpg" style="height: 200px; margin-left: 30px;">
-                            <figcaption style="text-align: center;">Fig. Circuit diagram of BCD to Decimal Decoder</figcaption>
+                            <figcaption style="text-align: center;">Fig.1 Circuit diagram of BCD to Decimal Decoder</figcaption>
                           </figure>
                           <figure>
                             <img src="./images/image004.png" style="height: 200px; width: 290px;margin-left: 60px;">
-                            <figcaption style="text-align: center;">Fig. Pin diagram of IC 7442</figcaption>
+                            <figcaption style="text-align: center;">Fig. 2 Pin diagram of IC 7442</figcaption>
                           </figure>
 
-                        <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
+                        <li>Click on '<b>Check Connections</b>' button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
                         <li>Provide the input by clicking toggle switches A<sub>0</sub>, A<sub>1</sub>, A<sub>2</sub> and A<sub>3</sub>.</li>
                         <li>Fill the observed values in the Truth Table.</li>
-                        <li>Verify Truth Table by clicking on Check button, if outputs are correct then click on OK.</li>
-                        <li>Click on the Reset button to reset the page.</li>
+                        <li>Verify Truth Table by clicking on '<b>Check</b>' button, if outputs are correct then click on OK.</li>
+                       
                     </ol>
                 </div>
 
             </div>
-            <div class="Button-data" id="Second_Data">
+            <div class="Button-data" id="Second_Data" style="bottom:10px">
                 <div class="Components">
                     <button class="close-btn" id="btn_close"><span>&#10005</span></button>
                     <div>
-                        <button onclick="breadboard()">Breadboard</button>
-                        <button onclick="supply()">Supply</button>
-                        <button onclick="inputs()">Toggle Switches</button>
+                        <button id="breadbutton" onclick="breadboard()">Breadboard</button>
+                        <button id="supplybutton" onclick="supply()">Supply</button>
+                        <button id="switchbutton" onclick="inputs()">Toggle Switches</button>
                     </div>
                     <div>
-                        <button onclick="ic7442()">IC7442</button>
-                        <button onclick="led()">LED</button>
+                        <button id="icbutton" onclick="ic7442()">IC7442</button>
+                        <button id="ledbutton" onclick="led()">LED</button>
                        
 
-                        <button onclick="resistance()">Resistance</button>
+                        <button id="resistancebutton" onclick="resistance()">Resistance</button>
                     </div>
                 </div>
             </div>
@@ -495,14 +496,15 @@
 
                 </table>
                 <div class="table_btn">
-                    <button id="tab_reset" onclick="resetTable()">Reset</button>
                     <button id="tab_check" onclick="checkTable()">Check</button>
+                    <button id="tab_reset" onclick="resetTable()" disabled>Reset</button>
+                    
                 </div>
             </div>
         </div>
     </div>
     <div id="copyright">
-        <h5>&copy; Copyright 2022 Virtual Labs, IIT Roorkee</h5>
+        <p style="font-weight:bold">&copy; Copyright 2022 Virtual Labs, IIT Roorkee</p>
     </div>
     <script src="js/right_components.js"></script>
     <script src="js/TABLE.JS"></script>

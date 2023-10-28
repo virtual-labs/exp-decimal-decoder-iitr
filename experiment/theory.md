@@ -82,7 +82,7 @@ The pin out diagram of IC 7442 shown in Fig.4. Pin 16 connects to the supply vol
 
 **Table 2: Truth Table of BCD to Decimal Decoder**  
 
-<table border="1" width="800" ; style="text-align:center">
+<table border="0" width="auto" ; style="text-align:center">
                         <tr>
                             <th colspan="1">S. No.</th>
                             <th colspan="4">BCD INPUT</th>
