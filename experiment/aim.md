@@ -1,1 +1,0 @@
-#### To study the operation of BCD to decimal decoder using IC-7442
